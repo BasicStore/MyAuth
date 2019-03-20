@@ -1,0 +1,9 @@
+SPRING SECURITY WEBSERVICE APPLICATION
+
+- look into the Users / user [obj v db table] issue. Maybe just remove table attribute in Users.
+  Note it is not as simple as replacing User.
+
+
+
+
+
