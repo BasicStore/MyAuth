@@ -1,8 +1,41 @@
-SPRING SECURITY WEBSERVICE APPLICATION
+SPRING SECURITY WEBSERVICE APPLICATION:   https://www.youtube.com/watch?v=egXtoL5Kg08
+
+- complete steps
 
 - look into the Users / user [obj v db table] issue. Maybe just remove table attribute in Users.
   Note it is not as simple as replacing User.
 
+- implement error jsp, for example test by adding a new user with no role, and running app
+
+- mix and match with SpringSecurityX
+  - apply own login page
+
+- apply to other apps:
+  - struts2
+  - springMVC
+  
+- password encoding 
+   
+==================================================================
+ENDPOINT URLs:
+   
+- localhost:8080/rest/hello/all
+- localhost:8080/rest/hello/admin/all
+	
+==================================================================
+STEPS:
+
+- define endpoints:
+  note that multiple roles can be assigned to a resource:  eg. @PreAuthorize("hasAnyRole('ADMIN', 'MEMBER')")
+  
+- configuration: define the restricted areas, and encode the password
+
+- implement a service to implement spring's UserDetailsService
+  select a method for the appropriate user retrieval.
+
+- create CustomUserDetails class
+
+==================================================================
 
 
 

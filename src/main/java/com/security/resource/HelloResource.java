@@ -22,8 +22,4 @@ public class HelloResource {
 	}
 
 	
-	// localhost:8080/rest/hello/all
-	// localhost:8080/rest/hello/admin/all
-	
-	
 }
