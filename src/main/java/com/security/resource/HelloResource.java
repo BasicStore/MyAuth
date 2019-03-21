@@ -10,7 +10,7 @@ public class HelloResource {
 	
 	@GetMapping("/all")
 	public String hello() {
-		return "hello all";
+		return "user";  // returns view + use spring mvc for view resolver
 	}
 
 	
@@ -18,12 +18,8 @@ public class HelloResource {
 	@PreAuthorize("hasAnyRole('ADMIN')")
 	@GetMapping("/admin/all")
 	public String adminHello() {
-		return "admin all";
+		return "admin";   // returns view + use spring mvc for view resolver
 	}
 
-	
-	// localhost:8080/rest/hello/all
-	// localhost:8080/rest/hello/admin/all
-	
 	
 }
