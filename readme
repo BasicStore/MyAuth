@@ -5,6 +5,7 @@ SPRING SECURITY WEBSERVICE APPLICATION:   https://www.youtube.com/watch?v=egXtoL
 - look into the Users / user [obj v db table] issue. Maybe just remove table attribute in Users.
   Note it is not as simple as replacing User.
 
+<<<<<<< HEAD
 - implement error jsp, for example test by adding a new user with no role, and running app
 
 - mix and match with SpringSecurityX
@@ -36,7 +37,33 @@ STEPS:
 - create CustomUserDetails class
 
 ==================================================================
+=======
+-----------------------------------------------------------------------------------------------
+RUN THE APP:
+localhost:8080/rest/hello/all
+localhost:8080/rest/hello/admin/all
+>>>>>>> masternot
+
+-----------------------------------------------------------------------------------------------
+NEXT STEPS:
+
+- build understanding 
+  --> DONE add jsps to the example
+  --> NOT_WORKING apply bespoke login page
+      --> needs to be part of Spring MVC app for the view resolver to work            
+  --> DONE add bespoke error handling page 
+  --> DONE test multi-roles on the same resource
+  --> DINE how to add multiple configurations for complex authorization?
+      - for example: a guest not get past the login page, does the app know automatically once
+                     signed in that an admin has rights for member and user level resources?
+  --> NO, SPECIFY ALL EXPLICITLY is there a hierarchy of authority? Or must all permissions be added to DB explicitly for OOB use?
+  --> how to apply to actual login page:  add --> .loginPage("/login")  
+  --> add to spring mvc apps
+
+-----------------------------------------------------------------------------------------------
 
 
+
+	
 
 

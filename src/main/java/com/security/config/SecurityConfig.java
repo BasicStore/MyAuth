@@ -28,12 +28,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable(); // disable cross side reference
+		
+		// WORKING as standalone without view resolver:
 		http.authorizeRequests()
 		.antMatchers("**/admin/**").authenticated()   // authenticate if /admin/ is within the path
 		.anyRequest().permitAll()
-		.and().formLogin().permitAll();     // with own login page:    .formLogin().loginPage("/loginpage").permitAll();
+		.and().formLogin().permitAll();
+		
+		// .and().formLogin().loginPage("/login").permitAll();   ==> add default login page with spring MVC   
 	}
-	
+		
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
