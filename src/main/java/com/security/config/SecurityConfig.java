@@ -30,12 +30,48 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf().disable(); // disable cross side reference
 		
 		// WORKING as standalone without view resolver:
-		http.authorizeRequests()
-		.antMatchers("**/admin/**").authenticated()   // authenticate if /admin/ is within the path
-		.anyRequest().permitAll()
-		.and().formLogin().permitAll();
+		http
+			.authorizeRequests()
+				.antMatchers("**/admin/**").authenticated()   // authenticate if /admin/ is within the path
+				.anyRequest().permitAll()
+				.and()
+		        .formLogin()
+	            .loginPage("/login")  // directs to a login form page
+	            .permitAll()          // once past the login, all actions are fine
+	            .and()
+	        .logout()                 // implcitly the same with logging out, although there is no logout action 
+	            .permitAll();
+
+				
+				
+		//formLogin().permitAll();
 		
-		// .and().formLogin().loginPage("/login").permitAll();   ==> add default login page with spring MVC   
+
+		
+		
+		
+		
+		
+		// .and().formLogin().loginPage("/login").permitAll();   ==> add default login page with spring MVC
+		
+		
+		
+		
+		
+		
+//		http
+//        .authorizeRequests()
+//            .antMatchers("/", "/home").permitAll()
+//            .anyRequest().authenticated() // any request with / or /home (ie. all of them), means it must get authenticated
+//            .and()
+//        .formLogin()
+//            .loginPage("/login")  // directs to a login form page
+//            .permitAll()          // once past the login, all actions are fine
+//            .and()
+//        .logout()                 // implcitly the same with logging out, although there is no logout action 
+//            .permitAll();
+		
+		
 	}
 		
 	
